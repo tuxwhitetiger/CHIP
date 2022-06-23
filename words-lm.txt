@@ -1,0 +1,14 @@
+hello
+chip
+face
+happy
+sad
+angry
+what
+gif
+flag
+oh
+set
+get
+voltage
+confirm

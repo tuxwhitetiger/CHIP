@@ -1,0 +1,3 @@
+https://github.com/hzeller/rpi-rgb-led-matrix
+
+http://www.speech.cs.cmu.edu/tools/lmtool.html
