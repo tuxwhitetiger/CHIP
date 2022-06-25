@@ -7,6 +7,42 @@ sudo apt-get install swig
 sudo apt-get install cmake
 sudo apt install libgraphicsmagick++-dev libwebp-dev
 sudo apt install libwebp-dev
+sudo apt-get install python3-pyaudio
+
+
+git clone https://github.com/hzeller/rpi-rgb-led-matrix
+cd rpi-rgb-led-matrix
+sudo HARDWARE_DESC=regular make install-python
+
+
+python -m pip install --upgrade pip setuptools wheel
+pip install --upgrade pocketsphinx
+
+
+cat <<EOF | sudo tee /etc/modprobe.d/blacklist-rgb-matrix.conf
+blacklist snd_bcm2835
+EOF
+
+
+sudo update-initramfs -u
+
+
+
+
+
+
+
+****************USED BUT NOT NEEDED**************************
+
+git clone https://github.com/cmusphinx/pocketsphinx
+mkdir build
+cd build
+sudo cmake ..
+sudo make
+sudo make install
+
+
+
 unzip sphinxbase-master.zip -d sphinxbase/
 unzip pocketsphinx-master.zip -d pocketsphinx/
 cd sphinxbase/sphinxbase-master 
@@ -23,19 +59,6 @@ cmake ..
 make
 make install
 
-
+ tar -xf pocketsphinx-5prealpha.tar.gz 
 
 cd ../../..
-git clone https://github.com/hzeller/rpi-rgb-led-matrix
-cd rpi-rgb-led-matrix
-sudo HARDWARE_DESC=regular make install-python
-
-
-
-
-cat <<EOF | sudo tee /etc/modprobe.d/blacklist-rgb-matrix.conf
-blacklist snd_bcm2835
-EOF
-
-sudo update-initramfs -u
-
