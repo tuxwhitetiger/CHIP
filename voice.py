@@ -7,14 +7,14 @@ from pocketsphinx.pocketsphinx import *
 from sphinxbase.sphinxbase import *
 import socket
 
-MODELDIR = "/home/tux/pocketsphinx/pocketsphinx-5prealpha/model"
+MODELDIR = "/home/tux/.local/lib/python3.9/site-packages/pocketsphinx/model/"
 
 config = Decoder.default_config()
-config.set_string('-hmm', path.join(MODELDIR, 'en-us/en-us'))
+config.set_string('-hmm', path.join(MODELDIR, 'en-us'))
 #build a list of word one per line and pump into the following site
 #http://www.speech.cs.cmu.edu/tools/lmtool.html
-config.set_string('-lm', path.join(MODELDIR, 'en-us/my.lm'))
-config.set_string('-dict', path.join(MODELDIR, 'en-us/my.dict'))
+config.set_string('-lm', path.join(MODELDIR, '/home/tux/CHIP/my.lm'))
+config.set_string('-dict', path.join(MODELDIR, '/home/tux/CHIP/my.dict'))
 config.set_string('-logfn','nul')
 decoder = Decoder(config)
 
