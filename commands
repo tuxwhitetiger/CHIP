@@ -1,0 +1,41 @@
+cd CHIP
+sudo apt-get install automake
+sudo apt-get install libtool
+sudo apt-get install bison
+sudo apt-get install autoconf
+sudo apt-get install swig
+sudo apt-get install cmake
+sudo apt install libgraphicsmagick++-dev libwebp-dev
+sudo apt install libwebp-dev
+unzip sphinxbase-master.zip -d sphinxbase/
+unzip pocketsphinx-master.zip -d pocketsphinx/
+cd sphinxbase/sphinxbase-master 
+./autogen.sh
+./configure
+sudo make
+sudo make install
+
+cd ../..
+cd pocketsphinx/pocketsphinx-master/
+mkdir build
+cd build
+cmake ..
+make
+make install
+
+
+
+cd ../../..
+git clone https://github.com/hzeller/rpi-rgb-led-matrix
+cd rpi-rgb-led-matrix
+sudo HARDWARE_DESC=regular make install-python
+
+
+
+
+cat <<EOF | sudo tee /etc/modprobe.d/blacklist-rgb-matrix.conf
+blacklist snd_bcm2835
+EOF
+
+sudo update-initramfs -u
+
