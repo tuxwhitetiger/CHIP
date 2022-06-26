@@ -15,7 +15,8 @@ options.hardware_mapping = 'regular'
 matrix = RGBMatrix(options = options)
 
 image = Image.open("./faces/test.gif")
-matrix.SetImage(image.convert('RGB'))
+while True:
+    matrix.SetImage(image.convert('RGB'))
 
 
 
