@@ -47,7 +47,7 @@ while True:
             in_speech_bf = decoder.get_in_speech()
             if not in_speech_bf:
                 decoder.end_utt()
-
+                print (decoder.hyp().hypstr)
                 if "SET SAD FACE" in decoder.hyp().hypstr:
                     print ('set sad face')
                     networksendsetface('Sad face')
