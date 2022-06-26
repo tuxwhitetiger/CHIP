@@ -6,14 +6,14 @@ import pyaudio
 from pocketsphinx import *
 import socket
 
-MODELDIR = "/home/tux/CHIP/model"
+MODELDIR = "/home/tux/CHIP/"
 
 config = Decoder.default_config()
-config.set_string('-hmm', path.join(MODELDIR, 'en-us/en-us'))
+config.set_string('-hmm', path.join(MODELDIR, 'model/en-us/en-us'))
 #build a list of word one per line and pump into the following site
 #http://www.speech.cs.cmu.edu/tools/lmtool.html
-config.set_string('-lm', path.join(MODELDIR, '../my.lm'))
-config.set_string('-dict', path.join(MODELDIR, '../my.dict'))
+config.set_string('-lm', path.join(MODELDIR, 'my.lm'))
+config.set_string('-dict', path.join(MODELDIR, 'my.dict'))
 config.set_string('-logfn','nul')
 decoder = Decoder(config)
 
