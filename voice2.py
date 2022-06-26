@@ -9,7 +9,7 @@ import socket
 MODELDIR = "/home/tux/CHIP/model"
 
 config = Decoder.default_config()
-config.set_string('-hmm', path.join(MODELDIR, 'en-us'))
+config.set_string('-hmm', path.join(MODELDIR, 'en-us/en-us'))
 #build a list of word one per line and pump into the following site
 #http://www.speech.cs.cmu.edu/tools/lmtool.html
 config.set_string('-lm', path.join(MODELDIR, '/home/tux/CHIP/my.lm'))
