@@ -6,7 +6,7 @@ import pyaudio
 from pocketsphinx import *
 import socket
 
-MODELDIR = "/usr/local/lib/python3.9/dist-packages/pocketsphinx/model"
+MODELDIR = "/home/tux/CHIP/model"
 
 config = Decoder.default_config()
 config.set_string('-hmm', path.join(MODELDIR, 'en-us'))
