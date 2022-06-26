@@ -41,7 +41,8 @@ git -C ~/CHIP pull https://github.com/tuxwhitetiger/CHIP.git
 
 
 
-
+#build a list of word one per line and pump into the following site
+#http://www.speech.cs.cmu.edu/tools/lmtool.html
 
 
 
