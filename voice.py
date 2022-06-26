@@ -7,7 +7,7 @@ from pocketsphinx.pocketsphinx import *
 from sphinxbase.sphinxbase import *
 import socket
 
-MODELDIR = "/home/tux/.local/lib/python3.9/site-packages/pocketsphinx/model/"
+MODELDIR = "/usr/local/lib/python3.9/dist-packages/pocketsphinx/model"
 
 config = Decoder.default_config()
 config.set_string('-hmm', path.join(MODELDIR, 'en-us'))
