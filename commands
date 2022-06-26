@@ -1,22 +1,20 @@
-cd CHIP
-sudo apt-get install automake
-sudo apt-get install libtool
-sudo apt-get install bison
-sudo apt-get install autoconf
-sudo apt-get install swig
-sudo apt-get install cmake
-sudo apt install libgraphicsmagick++-dev libwebp-dev
-sudo apt install libwebp-dev
+
+
+sudo apt-get install -y python3 python3-dev python3-pip build-essential swig git 
 sudo apt-get install python3-pyaudio
+
+python -m pip install --upgrade pip setuptools wheel
+pip install --upgrade pocketsphinx
+
+
+
+git clone https://github.com/tuxwhitetiger/CHIP
+cd CHIP
 
 
 git clone https://github.com/hzeller/rpi-rgb-led-matrix
 cd rpi-rgb-led-matrix
 sudo HARDWARE_DESC=regular make install-python
-
-
-python -m pip install --upgrade pip setuptools wheel
-pip install --upgrade pocketsphinx
 
 
 cat <<EOF | sudo tee /etc/modprobe.d/blacklist-rgb-matrix.conf
@@ -28,13 +26,52 @@ sudo update-initramfs -u
 
 
 
+git -C ~/CHIP pull https://github.com/tuxwhitetiger/CHIP.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 ****************USED BUT NOT NEEDED**************************
 
+gcc, automake, autoconf, libtool, bison, swig
+Python development package and the pulseaudio development package.
+
+
+
+
+sudo apt-get install cmake
+pip install --upgrade pip setuptools wheel
+pip3 install ninja
+pip install cmake
+
 git clone https://github.com/cmusphinx/pocketsphinx
+cd pocketsphinx
+sudo python -m pip install .
+
+
 mkdir build
 cd build
 sudo cmake ..
