@@ -11,7 +11,7 @@ network = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 network.connect((HOST, PORT))
 
 def networksendGetface():
-    network.sendall(data.encode())
+    network.sendall('Get Face')
     data = network.recv(1024)
     return data.decode('utf-8')
 
