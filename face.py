@@ -34,19 +34,19 @@ image = Image.open("./faces/test.gif")
 while True:
     face = networksendGetface()
 
-    if "SAD FACE" in face:
+    if "sad face" in face:
         image = Image.open("./faces/sad.gif")
-    elif "HAPPY FACE" in face:
+    elif "Happy face" in face:
         image = Image.open("./faces/happy.gif")
-    elif "FLAG FACE" in face:
+    elif "flag face" in face:
         image = Image.open("./faces/flag.gif")
-    elif "ANGRY FACE" in face:
+    elif "angry face" in face:
         image = Image.open("./faces/angry.gif")
-    elif "GIF FACE" in face:
+    elif "gif face" in face:
         image = Image.open("./faces/pacman.gif")
-    elif "OH FACE" in face:
+    elif "oh face" in face:
         image = Image.open("./faces/oh.gif")
-    elif "WHAT FACE" in face:
+    elif "what face" in face:
         image = Image.open("./faces/what.gif")
 
     matrix.SetImage(image.convert('RGB'))
