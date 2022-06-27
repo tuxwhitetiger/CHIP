@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import socket
 from PIL import Image
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
