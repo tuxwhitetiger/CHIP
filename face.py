@@ -13,6 +13,7 @@ network.connect((HOST, PORT))
 def networksendGetface():
     network.sendall("Get Face".encode())
     data = network.recv(1024)
+    print(data.decode('utf-8'))
     return data.decode('utf-8')
 
 
@@ -33,7 +34,7 @@ image = Image.open("./faces/test.gif")
 
 while True:
     face = networksendGetface()
-
+    print(face)
     if "sad face" in face:
         image = Image.open("./faces/sad.gif")
     elif "Happy face" in face:
