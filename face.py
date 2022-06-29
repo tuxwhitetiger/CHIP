@@ -38,6 +38,7 @@ image = Image.open("./faces/test.gif")
 
 def playAnimatedGif(fileName):
     image = Image.open(fileName)
+    global face
     for frame in range(0,image.n_frames):
         if frame % 10 == 0:
             checkface = networksendGetface()
