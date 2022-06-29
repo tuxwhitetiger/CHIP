@@ -101,12 +101,12 @@ def showWhatFace():
     mfonts = [font1,font2,font3,font4]
     i = 0
     count = 100
-    sleepTimer = 0.8
+    sleepTimer = 0.6
     #need to run each time ? placed
     while i<count:
         textColor =  graphics.Color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) #random color
         font = random.choice(mfonts)
-        x = random.randint(0, 60)
+        x = random.randint(0, 120)
         y = random.randint(0, 30)
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "?")
         matrix.SwapOnVSync(offscreen_canvas)
