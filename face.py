@@ -100,8 +100,8 @@ def showWhatFace():
     font4.LoadFont("./fonts/9x15.bdf")
     mfonts = [font1,font2,font3,font4]
     i = 0
-    count = 50
-    sleepTimer = 1.0
+    count = 100
+    sleepTimer = 0.8
     #need to run each time ? placed
     while i<count:
         textColor =  graphics.Color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) #random color
