@@ -104,9 +104,10 @@ def showWhatFace():
     while i<count:
         textColor =  graphics.Color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) #random color
         font = random.choice(mfonts)
-        x = random.randint(0, 120)
+        x = random.randint(0, 60)
         y = random.randint(0, 30)
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "?")
+        offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
         sleepTimer = sleepTimer-(sleepTimer/(count-i))
         i = i + 1 
         time.sleep(sleepTimer)
