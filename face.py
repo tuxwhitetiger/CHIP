@@ -108,6 +108,7 @@ def showWhatFace():
         y = random.randint(0, 30)
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "?")
         sleepTimer = sleepTimer-(sleepTimer/(count-i))
+        i = i + 1 
         time.sleep(sleepTimer)
 
 
