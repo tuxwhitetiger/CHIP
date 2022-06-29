@@ -45,7 +45,7 @@ def playAnimatedGif(fileName):
             if checkface not in face:
                 face = checkface
                 break
-        time.sleep(0.4)
+        time.sleep(0.04)
         image.seek(frame)
         matrix.SetImage(image.convert('RGB'))
 
