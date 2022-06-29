@@ -113,8 +113,9 @@ def showWhatFace():
         sleepTimer = sleepTimer-(sleepTimer/(count-i))
         i = i + 1 
         time.sleep(sleepTimer)
+        time.sleep(0.001)
 
-
+    time.sleep(0.5)
 
 
 
