@@ -53,6 +53,36 @@ def showStaticGif(fileName):
     image = Image.open(fileName)
     matrix.SetImage(image.convert('RGB'))
 
+
+def showSadFace():
+    ## random bounce between with in max and chance of double blink face /// animate it?
+    image = Image.open("./faces/sad.gif")
+    matrix.SetImage(image.convert('RGB'))
+
+def showHappyFace():
+    ## random bounce between with in max and chance of double blink face /// animate it?
+    image = Image.open("./faces/happy.gif")
+    matrix.SetImage(image.convert('RGB'))
+
+
+def showFlagFace():
+    ## random bounce between with in max and chance of double blink face /// animate it?
+    showStaticGif("./faces/flag.gif")
+
+def showAngryFace():
+    ## growl + nose flareing
+    image = Image.open("./faces/angry.gif")
+    matrix.SetImage(image.convert('RGB'))
+
+def showGifFace():
+    ## growl + nose flareing
+    playAnimatedGif("./faces/pacman.gif")
+
+def showOhFace():
+    ## growl + nose flareing
+    image = Image.open("./faces/oh.gif")
+    matrix.SetImage(image.convert('RGB'))
+
 def showWhatFace():
     ## do the ? spam in here 
     #set up vars
@@ -81,35 +111,27 @@ def showWhatFace():
 
 
 
-def showHappyFace():
-    ## random bounce between with in max and chance of double blink face /// animate it?
-    matrix.SetImage(image.convert('RGB'))
-
-def showAngryFace():
-    ## growl + nose flareing
-    matrix.SetImage(image.convert('RGB'))
 
 
 while True:
     face = networksendGetface()
     print(face)
     if "Sad face" in face:
-        image = Image.open("./faces/sad.gif")
+        showSadFace()
     elif "Happy face" in face:
-        image = Image.open("./faces/happy.gif")
+        showHappyFace()
     elif "Flag face" in face:
-        showStaticGif("./faces/flag.gif")
+        showFlagFace()
     elif "Angry face" in face:
-        image = Image.open("./faces/angry.gif")
+        showAngryFace()
     elif "Gif face" in face:
-        playAnimatedGif("./faces/pacman.gif")
+        showGifFace()
     elif "Oh face" in face:
-        image = Image.open("./faces/oh.gif")
+        showOhFace
     elif "What face" in face:
-        image = Image.open("./faces/what.gif")
+        showWhatFace()
 
-    matrix.SetImage(image.convert('RGB'))
-
+   
 
 
 
