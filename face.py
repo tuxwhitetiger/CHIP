@@ -87,7 +87,9 @@ def showOhFace():
 def showWhatFace():
     ## do the ? spam in here 
     #set up vars
+
     offscreen_canvas = matrix.CreateFrameCanvas()
+    offscreen_canvas.Clear()
     font1 = graphics.Font()
     font1.LoadFont("./fonts/5x8.bdf")   
     font2 = graphics.Font()
@@ -107,7 +109,7 @@ def showWhatFace():
         x = random.randint(0, 60)
         y = random.randint(0, 30)
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "?")
-        offscreen_canvas = matrix.SwapOnVSync(offscreen_canvas)
+        matrix.SwapOnVSync(offscreen_canvas)
         sleepTimer = sleepTimer-(sleepTimer/(count-i))
         i = i + 1 
         time.sleep(sleepTimer)
