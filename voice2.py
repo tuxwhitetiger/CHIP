@@ -47,27 +47,29 @@ while True:
             in_speech_bf = decoder.get_in_speech()
             if not in_speech_bf:
                 decoder.end_utt()
-                if "SET SAD FACE" in decoder.hyp().hypstr:
-                    print ('set sad face')
-                    networksendsetface('Sad face')
-                elif "SET HAPPY FACE" in decoder.hyp().hypstr:
-                    print ('set happy face')
-                    networksendsetface('Happy face')
-                elif "SET ANGRY FACE" in decoder.hyp().hypstr: 
-                    print ('set angry face')
-                    networksendsetface('Angry face')
-                elif "SET WHAT FACE" in decoder.hyp().hypstr:
-                    print ('set what face')
-                    networksendsetface('What face')
-                elif "SET FLAG FACE" in decoder.hyp().hypstr:
-                    print ('set flag face')
-                    networksendsetface('Flag face')
-                elif "SET GIF FACE" in decoder.hyp().hypstr:
-                    print ('set gif face')
-                    networksendsetface('Gif face')
-                elif "SET OH FACE" in decoder.hyp().hypstr:
-                    print ('set oh face')
-                    networksendsetface('Oh face')
+                guess = decoder.hyp()
+                if guess != None:
+                    if "SET SAD FACE" in guess.hypstr:
+                        print ('set sad face')
+                        networksendsetface('Sad face')
+                    elif "SET HAPPY FACE" in guess.hypstr:
+                        print ('set happy face')
+                        networksendsetface('Happy face')
+                    elif "SET ANGRY FACE" in guess.hypstr: 
+                        print ('set angry face')
+                        networksendsetface('Angry face')
+                    elif "SET WHAT FACE" in guess.hypstr:
+                        print ('set what face')
+                        networksendsetface('What face')
+                    elif "SET FLAG FACE" in guess.hypstr:
+                        print ('set flag face')
+                        networksendsetface('Flag face')
+                    elif "SET GIF FACE" in guess.hypstr:
+                        print ('set gif face')
+                        networksendsetface('Gif face')
+                    elif "SET OH FACE" in guess.hypstr:
+                        print ('set oh face')
+                        networksendsetface('Oh face')
                 decoder.start_utt()
     else:
         break
