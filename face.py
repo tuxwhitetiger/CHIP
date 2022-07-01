@@ -54,8 +54,8 @@ def showSadFace():
 
 def showHappyFace():
     ## random bounce between with in max and chance of double blink face /// animate it?
-    image = Image.open("./faces/happy.gif")
-    matrix.SetImage(image.convert('RGB'))
+    playAnimatedGif("./faces/happy.gif")
+   
 
 def showFlagFace():
     showStaticGif("./faces/flag.gif")
