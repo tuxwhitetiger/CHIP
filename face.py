@@ -73,8 +73,8 @@ def showHappyFace():
     #hold on first frame then randomly deside to play it and sometimes play it twice at double speed
     happyFaceNetworkTickCount = 0
     seconds = time.time()
-    blinkBase = 5000
-    blinkAdition = random.randint(0, 5000)
+    blinkBase = 5
+    blinkAdition = (random.randint(0, 5000)/1000)
     doubleBlink = bool(random.getrandbits(1))
     global face
     while True:
@@ -88,7 +88,7 @@ def showHappyFace():
 
         #static
         showStaticGif("./faces/happy.gif")
-        if (time.time() - (seconds+blinkBase+blinkAdition)) <= 0:
+        if ((seconds+blinkBase+blinkAdition) - time.time()) <= 0:
 
             if doubleBlink:
                 #fastdoubleblinks
