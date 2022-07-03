@@ -59,6 +59,8 @@ def playFastAnimatedGif(fileName):
 
 def showStaticGif(fileName):
     image = Image.open(fileName)
+    if image.n_frames > 1:
+        image.seek(0)
     matrix.SetImage(image.convert('RGB'))
 
 def showSadFace():
@@ -78,8 +80,15 @@ def showHappyFace():
             if checkface not in face:
                 face = checkface
                 break
+
+        #static
+        showStaticGif("./faces/happy.gif")
+        #blink
         #playAnimatedGif("./faces/happy.gif")
-        playFastAnimatedGif("./faces/happy.gif")
+        #fastblinks
+        #playFastAnimatedGif("./faces/happy.gif")
+        #playFastAnimatedGif("./faces/happy.gif")
+
 
    
 
