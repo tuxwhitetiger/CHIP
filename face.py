@@ -193,7 +193,7 @@ def showUwUFace():
         #check bounding boxs
         if(y>=32):
             owo_down = False
-        if(y<=16):
+        if(y<=11):
             owo_down = True
         if(x>=38):
             owo_right = False
@@ -212,6 +212,7 @@ def showUwUFace():
         #draw
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "OwO")
         matrix.SwapOnVSync(offscreen_canvas)
+        time.sleep(0.04)
 
 
 
