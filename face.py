@@ -135,6 +135,7 @@ def showWhatFace():
     sleepTimer = 0.6
     global face
     #need to run each time ? placed
+    # need to remove time constraint and increase no of ? per frame as time goes on
     while i<count:
         textColor =  graphics.Color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) #random color
         font = random.choice(mfonts)
