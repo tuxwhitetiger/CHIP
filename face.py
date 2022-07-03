@@ -49,11 +49,6 @@ def playFastAnimatedGif(fileName):
     image = Image.open(fileName)
     global face
     for frame in range(0,image.n_frames):
-        if frame % 40 == 0:
-            checkface = networksendGetface()
-            if checkface not in face:
-                face = checkface
-                break
         time.sleep(0.01)
         image.seek(frame)
         matrix.SetImage(image.convert('RGB'))
@@ -152,13 +147,77 @@ def showWhatFace():
         time.sleep(0.001)
     time.sleep(0.5)
 
+def showUwUFace():
+    #set up vars
+    offscreen_canvas = matrix.CreateFrameCanvas()
+    offscreen_canvas.Clear()
+    font = graphics.Font()
+    font.LoadFont("./fonts/9x15.bdf")
+    continuum = 0
+    x = 0
+    y = 0
+    owo_down = False
+    owo_right = False
+    i = 0
+    while True:
+        #check for new face
+        if i % 20 == 0:
+            checkface = networksendGetface()
+            if checkface not in face:
+                face = checkface
+                break
+        i = i+1
+        #pick colour
+        continuum += 1
+        continuum %= 3 * 255
+        red = 0
+        green = 0
+        blue = 0
+        if continuum <= 255:
+            c = continuum
+            blue = 255 - c
+            red = c
+        elif continuum > 255 and continuum <= 511:
+            c = continuum - 256
+            red = 255 - c
+            green = c
+        else:
+            c = continuum - 512
+            green = 255 - c
+            blue = c
+        textColor =  graphics.Color(red,green,blue)
+        
+        #pick location
+        #check bounding boxs
+        if(y>=16):
+            owo_down = False
+        if(y<=0):
+            owo_down = True
+        if(x>=30):
+            owo_right = False
+        if(x<=0):
+            owo_right = True
+        #move in correct direction
+        if(owo_down):
+            y = y+1
+        else:
+            y = y-1
+        if(owo_right):
+            x = x+1
+        else:
+            x = x-1
+        
+        #draw
+        graphics.DrawText(offscreen_canvas, font, x, y, textColor, "OwO")
+        matrix.SwapOnVSync(offscreen_canvas)
+
 
 
 while True:
     face = networksendGetface()
     
     if "Sad face" in face:
-        showSadFace()
+        showUwUFace()
     elif "Happy face" in face:
         showHappyFace()
     elif "Flag face" in face:
