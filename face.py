@@ -153,6 +153,7 @@ def showUwUFace():
     offscreen_canvas.Clear()
     font = graphics.Font()
     font.LoadFont("./fonts/9x15.bdf")
+    global face
     continuum = 0
     x = 0
     y = 0
