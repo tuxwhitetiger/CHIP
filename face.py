@@ -44,6 +44,19 @@ def playAnimatedGif(fileName):
         image.seek(frame)
         matrix.SetImage(image.convert('RGB'))
 
+def playFastAnimatedGif(fileName):
+    image = Image.open(fileName)
+    global face
+    for frame in range(0,image.n_frames):
+        if frame % 40 == 0:
+            checkface = networksendGetface()
+            if checkface not in face:
+                face = checkface
+                break
+        time.sleep(0.01)
+        image.seek(frame)
+        matrix.SetImage(image.convert('RGB'))
+
 def showStaticGif(fileName):
     image = Image.open(fileName)
     matrix.SetImage(image.convert('RGB'))
@@ -54,7 +67,20 @@ def showSadFace():
 
 def showHappyFace():
     ## random bounce between with in max and chance of double blink face /// animate it?
-    playAnimatedGif("./faces/happy.gif")
+    #hold on first frame then randomly deside to play it and sometimes play it twice at double speed
+    happyFaceNetworkTickCount = 0
+    global face
+    while True:
+        happyFaceNetworkTickCount = +1
+        if happyFaceNetworkTickCount % 10 == 0:
+            checkface = networksendGetface()
+            happyFaceNetworkTickCount = 0
+            if checkface not in face:
+                face = checkface
+                break
+        #playAnimatedGif("./faces/happy.gif")
+        playFastAnimatedGif("./faces/happy.gif")
+
    
 
 def showFlagFace():
