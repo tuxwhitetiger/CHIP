@@ -191,11 +191,11 @@ def showUwUFace():
         
         #pick location
         #check bounding boxs
-        if(y>=16):
+        if(y>=32):
             owo_down = False
-        if(y<=0):
+        if(y<=16):
             owo_down = True
-        if(x>=30):
+        if(x>=38):
             owo_right = False
         if(x<=0):
             owo_right = True
