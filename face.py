@@ -17,7 +17,7 @@ network.connect((HOST, PORT))
 def networksendGetface():
     network.sendall("Get Face".encode())
     data = network.recv(1024)
-    print(data.decode('utf-8'))
+    #print(data.decode('utf-8'))
     return data.decode('utf-8')
 
 # Configuration for the matrix
