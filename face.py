@@ -212,7 +212,7 @@ def showUwUFace():
         #draw
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "OwO")
         matrix.SwapOnVSync(offscreen_canvas)
-        time.sleep(0.04)
+        time.sleep(0.06)
 
 
 
