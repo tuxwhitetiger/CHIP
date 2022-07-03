@@ -133,6 +133,7 @@ def showWhatFace():
     i = 0
     count = 100
     sleepTimer = 0.6
+    global face
     #need to run each time ? placed
     while i<count:
         textColor =  graphics.Color(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)) #random color
@@ -143,6 +144,10 @@ def showWhatFace():
         matrix.SwapOnVSync(offscreen_canvas)
         sleepTimer = sleepTimer-(sleepTimer/(count-i))
         i = i + 1 
+        checkface = networksendGetface()
+        if checkface not in face:
+            face = checkface
+            break
         time.sleep(sleepTimer)
         time.sleep(0.001)
     time.sleep(0.5)
