@@ -156,8 +156,8 @@ def showUwUFace():
     continuum = 0
     x = 0
     y = 0
-    owo_down = False
-    owo_right = False
+    owo_down = True
+    owo_right = True
     i = 0
     while True:
         #check for new face
@@ -170,9 +170,9 @@ def showUwUFace():
         #pick colour
         continuum += 1
         continuum %= 3 * 255
-        red = 0
-        green = 0
-        blue = 0
+        red = 255
+        green = 255
+        blue = 255
         if continuum <= 255:
             c = continuum
             blue = 255 - c
