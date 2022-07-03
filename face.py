@@ -99,7 +99,7 @@ def showHappyFace():
                 playAnimatedGif("./faces/happy.gif")
             seconds = time.time()
             doubleBlink = bool(random.getrandbits(1))
-            blinkAdition = random.randint(0, 5000)
+            blinkAdition = (random.randint(0, 5000)/1000)
 
 
 
