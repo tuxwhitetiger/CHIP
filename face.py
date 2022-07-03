@@ -162,7 +162,7 @@ def showUwUFace():
     i = 0
     while True:
         #check for new face
-        if i % 20 == 0:
+        if i % 40 == 0:
             checkface = networksendGetface()
             if checkface not in face:
                 face = checkface
@@ -212,7 +212,7 @@ def showUwUFace():
         #draw
         graphics.DrawText(offscreen_canvas, font, x, y, textColor, "OwO")
         matrix.SwapOnVSync(offscreen_canvas)
-        time.sleep(0.06)
+        time.sleep(0.04)
 
 
 
