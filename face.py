@@ -73,7 +73,7 @@ def showHappyFace():
     happyFaceNetworkTickCount = 0
     global face
     while True:
-        happyFaceNetworkTickCount = +1
+        happyFaceNetworkTickCount = happyFaceNetworkTickCount+1
         if happyFaceNetworkTickCount % 10 == 0:
             checkface = networksendGetface()
             happyFaceNetworkTickCount = 0
