@@ -168,6 +168,7 @@ def showUwUFace():
                 face = checkface
                 break
         i = i+1
+        offscreen_canvas.Clear()
         #pick colour
         continuum += 1
         continuum %= 3 * 255
