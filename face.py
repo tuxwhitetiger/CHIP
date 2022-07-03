@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from email.mime import base
 import socket
 from PIL import Image
 from PIL import GifImagePlugin
@@ -71,6 +72,10 @@ def showHappyFace():
     ## random bounce between with in max and chance of double blink face /// animate it?
     #hold on first frame then randomly deside to play it and sometimes play it twice at double speed
     happyFaceNetworkTickCount = 0
+    seconds = time.time()
+    blinkBase = 5000
+    blinkAdition = random.randint(0, 5000)
+    doubleBlink = bool(random.getrandbits(1))
     global face
     while True:
         happyFaceNetworkTickCount = happyFaceNetworkTickCount+1
@@ -83,11 +88,20 @@ def showHappyFace():
 
         #static
         showStaticGif("./faces/happy.gif")
-        #blink
-        #playAnimatedGif("./faces/happy.gif")
-        #fastblinks
-        #playFastAnimatedGif("./faces/happy.gif")
-        #playFastAnimatedGif("./faces/happy.gif")
+        if (time.time() - (seconds+blinkBase+blinkAdition)) <= 0:
+
+            if doubleBlink:
+                #fastdoubleblinks
+                playFastAnimatedGif("./faces/happy.gif")
+                playFastAnimatedGif("./faces/happy.gif")
+            else:
+                #blink
+                playAnimatedGif("./faces/happy.gif")
+            seconds = time.time()
+            doubleBlink = bool(random.getrandbits(1))
+            blinkAdition = random.randint(0, 5000)
+
+
 
 
    
