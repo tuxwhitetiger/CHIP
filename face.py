@@ -167,6 +167,7 @@ def showUwUFace():
     owo_down = True
     owo_right = True
     i = 0
+    c=Col
     while True:
         #check for new face
         if i % 40 == 0:
@@ -181,7 +182,7 @@ def showUwUFace():
         if continuum >= 1:
             continuum = 0
         
-        red,green,blue = col.hsl2rgb((continuum, 1.0, 0.5))
+        red,green,blue = Col.hsl2rgb((continuum, 1.0, 0.5))
         textColor =  graphics.Color(red,green,blue)
         #pick colour
         #continuum += 1
