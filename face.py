@@ -3,7 +3,7 @@ from email.mime import base
 import socket
 from PIL import Image
 from PIL import GifImagePlugin
-import Colour
+from colour import Color as Col
 import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 import time
