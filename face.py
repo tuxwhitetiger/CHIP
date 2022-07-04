@@ -176,25 +176,32 @@ def showUwUFace():
                 break
         i = i+1
         offscreen_canvas.Clear()
-        #pick colour
-        continuum += 1
-        continuum %= 3 * 255
-        red = 255
-        green = 255
-        blue = 255
-        if continuum <= 255:
-            c = continuum
-            blue = 255 - c
-            red = c
-        elif continuum > 255 and continuum <= 511:
-            c = continuum - 256
-            red = 255 - c
-            green = c
-        else:
-            c = continuum - 512
-            green = 255 - c
-            blue = c
+        #new pick colour
+        continuum += 0.01
+        if continuum >= 1:
+            continuum = 0
+        
+        red,green,blue = col.hsl2rgb((continuum, 1.0, 0.5))
         textColor =  graphics.Color(red,green,blue)
+        #pick colour
+        #continuum += 1
+        #continuum %= 3 * 255
+        #red = 255
+        #green = 255
+        #blue = 255
+        #if continuum <= 255:
+        #    c = continuum
+        #    blue = 255 - c
+        #    red = c
+        #elif continuum > 255 and continuum <= 511:
+        #    c = continuum - 256
+        #    red = 255 - c
+        #    green = c
+        #else:
+        #    c = continuum - 512
+        #    green = 255 - c
+        #    blue = c
+        #textColor =  graphics.Color(red,green,blue)
         
         #pick location
         #check bounding boxs
