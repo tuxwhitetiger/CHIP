@@ -178,7 +178,7 @@ def showUwUFace():
         i = i+1
         offscreen_canvas.Clear()
         #new pick colour
-        continuum += 0.01
+        continuum += 0.005
         if continuum >= 1:
             continuum = 0
         c = Col(hsl=(continuum, 1, 0.5))
