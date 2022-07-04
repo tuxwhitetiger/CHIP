@@ -182,7 +182,7 @@ def showUwUFace():
         if continuum >= 1:
             continuum = 0
         c = Col(hsl=(continuum, 1, 0.5))
-        red,green,blue = c.hsl2rgb()
+        red,green,blue = c.hsl2rgb(continuum, 1, 0.5)
         textColor =  graphics.Color(red,green,blue)
         #pick colour
         #continuum += 1
