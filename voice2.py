@@ -85,6 +85,7 @@ while True:
                     elif "SET OH FACE" in guess.hypstr:
                         confirmspeak("Oh face")
                     elif "VOLTAGE" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
+                        speak("canceled")
                         faceToConfirm = lastface
                 decoder.start_utt()
     else:
