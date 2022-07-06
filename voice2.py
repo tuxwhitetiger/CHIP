@@ -47,6 +47,7 @@ def confirmspeak(message):
     subprocess.Popen(['espeak', message])
 
 def speak(message):
+    messageToRead = "confrim "+message
     subprocess.Popen(['espeak', message])
 
 
