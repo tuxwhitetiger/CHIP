@@ -30,8 +30,8 @@ PORT = 65432  # The port used by the server
 network = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 network.connect((HOST, PORT))
 
-lastface=""
-faceToConfirm=""
+lastface="Happy face"
+faceToConfirm="Happy face"
 
 def networksendsetface(message):
     data = "Set Face:"+message
