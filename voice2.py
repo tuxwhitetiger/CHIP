@@ -34,7 +34,7 @@ faceToConfirm=""
 
 def networksendsetface(message):
     data = "Set Face:"+message
-    print("setting face")
+    print(data)
     network.sendall(data.encode())
     print("awating responce")
     data = network.recv(1024)
