@@ -42,6 +42,7 @@ def networksendsetface(message):
     return data.decode('utf-8')
 
 def confirmspeak(message):
+    global faceToConfirm
     faceToConfirm=message
     subprocess.Popen(['espeak', message])
 
