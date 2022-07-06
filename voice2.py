@@ -2,7 +2,7 @@
 
 from os import environ, path
 import pyaudio
-
+import subprocess
 from pocketsphinx import *
 import socket
 
@@ -30,6 +30,9 @@ PORT = 65432  # The port used by the server
 network = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 network.connect((HOST, PORT))
 
+waitingOnConfirm=False
+faceToConfirm=""
+
 def networksendsetface(message):
     data = "Set Face:"+message
     print("setting face")
@@ -37,6 +40,11 @@ def networksendsetface(message):
     print("awating responce")
     data = network.recv(1024)
     print("recived:", data.decode('utf-8'))
+
+def confirmspeak(message):
+    subprocess.Popen(['espeak', message])
+
+
 
 
 while True:
@@ -49,27 +57,29 @@ while True:
                 decoder.end_utt()
                 guess = decoder.hyp()
                 if guess != None:
-                    if "SET SAD FACE" in guess.hypstr:
-                        print ('set sad face')
-                        networksendsetface('Sad face')
+                    if "CONFIRM" in guess.hypstr:
+                        networksendsetface(faceToConfirm)
+                    elif "SET SAD FACE" in guess.hypstr:
+                        faceToConfirm="sad face"
+                        confirmspeak("sad face")
                     elif "SET HAPPY FACE" in guess.hypstr:
-                        print ('set happy face')
-                        networksendsetface('Happy face')
+                        faceToConfirm="Happy face"
+                        confirmspeak("Happy face")
                     elif "SET ANGRY FACE" in guess.hypstr: 
-                        print ('set angry face')
-                        networksendsetface('Angry face')
+                        faceToConfirm="Angry face"
+                        confirmspeak("Angry face")
                     elif "SET WHAT FACE" in guess.hypstr:
-                        print ('set what face')
-                        networksendsetface('What face')
+                        faceToConfirm="What face"
+                        confirmspeak("What face")
                     elif "SET FLAG FACE" in guess.hypstr:
-                        print ('set flag face')
-                        networksendsetface('Flag face')
+                        faceToConfirm="Flag face"
+                        confirmspeak("Flag face")
                     elif "SET GIF FACE" in guess.hypstr:
-                        print ('set gif face')
-                        networksendsetface('Gif face')
+                        faceToConfirm="Gif face"
+                        confirmspeak("Gif face")
                     elif "SET OH FACE" in guess.hypstr:
-                        print ('set oh face')
-                        networksendsetface('Oh face')
+                        faceToConfirm="Oh face"
+                        confirmspeak("Oh face")
                 decoder.start_utt()
     else:
         break
