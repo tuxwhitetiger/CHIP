@@ -69,6 +69,7 @@ while True:
                 guess = decoder.hyp()
                 if guess != None:
                     if "CONFIRM" in guess.hypstr:
+                        lastface = faceToConfirm
                         speak(networksendsetface(faceToConfirm))
                     elif "SET SAD FACE" in guess.hypstr:
                         confirmspeak("Sad face")
