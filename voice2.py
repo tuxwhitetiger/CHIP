@@ -30,7 +30,6 @@ PORT = 65432  # The port used by the server
 network = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 network.connect((HOST, PORT))
 
-waitingOnConfirm=False
 faceToConfirm=""
 
 def networksendsetface(message):
