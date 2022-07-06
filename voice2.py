@@ -30,6 +30,7 @@ PORT = 65432  # The port used by the server
 network = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 network.connect((HOST, PORT))
 
+lastface=""
 faceToConfirm=""
 
 def networksendsetface(message):
@@ -43,6 +44,8 @@ def networksendsetface(message):
 
 def confirmspeak(message):
     global faceToConfirm
+    global lastface
+    lastface=faceToConfirm
     faceToConfirm=message
     confirm = 'confirm '
     messageToRead = confirm + message
@@ -81,6 +84,8 @@ while True:
                         confirmspeak("Gif face")
                     elif "SET OH FACE" in guess.hypstr:
                         confirmspeak("Oh face")
+                    elif "VOLTAGE" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
+                        faceToConfirm = lastface
                 decoder.start_utt()
     else:
         break
