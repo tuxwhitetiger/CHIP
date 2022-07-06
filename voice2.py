@@ -39,8 +39,13 @@ def networksendsetface(message):
     print("awating responce")
     data = network.recv(1024)
     print("recived:", data.decode('utf-8'))
+    return data.decode('utf-8')
 
 def confirmspeak(message):
+    faceToConfirm=message
+    subprocess.Popen(['espeak', message])
+
+def speak(message):
     subprocess.Popen(['espeak', message])
 
 
@@ -57,27 +62,20 @@ while True:
                 guess = decoder.hyp()
                 if guess != None:
                     if "CONFIRM" in guess.hypstr:
-                        networksendsetface(faceToConfirm)
+                        speak(networksendsetface(faceToConfirm))
                     elif "SET SAD FACE" in guess.hypstr:
-                        faceToConfirm="sad face"
-                        confirmspeak("sad face")
+                        confirmspeak("Sad face")
                     elif "SET HAPPY FACE" in guess.hypstr:
-                        faceToConfirm="Happy face"
                         confirmspeak("Happy face")
                     elif "SET ANGRY FACE" in guess.hypstr: 
-                        faceToConfirm="Angry face"
                         confirmspeak("Angry face")
                     elif "SET WHAT FACE" in guess.hypstr:
-                        faceToConfirm="What face"
                         confirmspeak("What face")
                     elif "SET FLAG FACE" in guess.hypstr:
-                        faceToConfirm="Flag face"
                         confirmspeak("Flag face")
                     elif "SET GIF FACE" in guess.hypstr:
-                        faceToConfirm="Gif face"
                         confirmspeak("Gif face")
                     elif "SET OH FACE" in guess.hypstr:
-                        faceToConfirm="Oh face"
                         confirmspeak("Oh face")
                 decoder.start_utt()
     else:
