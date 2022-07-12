@@ -1,10 +1,11 @@
 from array import *
+import enum
 from pickle import FALSE, NONE
 from random import random
 
 
 
-class Direction(Enum):
+class Direction(enum):
     UP=0
     DOWN=1
     LEFT=2
