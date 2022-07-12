@@ -36,17 +36,17 @@ class snake:
     segments = []
     food = Food()
 
-    def makenewfood():
+    def makenewfood(self):
         global food
         food.x = random.randint(0, 64)
         food.y = random.randint(0, 32)
 
-    def gameover():
+    def gameover(self):
         segments.clear()
         playing = False
 
 
-    def moveseg(seg):
+    def moveseg(self,seg):
         if(seg.moving == True): 
             if(seg.direction == 0): #up
                 seg.y -= 1
@@ -63,7 +63,7 @@ class snake:
         elif ((seg.x == seg.following.x) & (seg.y == seg.following.y)) : ## if its at the end of the tail start moving
             seg.startmoving = True
         
-    def movehead():
+    def movehead(self):
         global head
         # death on wall colition logic needs adding .... this needs to be on head logic 
         if(head.direction == 0): #up
@@ -78,24 +78,24 @@ class snake:
         #cheack for wall colition
         if(head.y == 0):
             #death
-            gameover()
+            gameover(self)
         elif(head.y == 32):
             #death
-            gameover()
+            gameover(self)
         elif(head.x == 0):
             #death
-            gameover()
+            gameover(self)
         elif(head.x == 64):
             #death
-            gameover()
+            gameover(self)
 
-    def foodcheck() :
+    def foodcheck(self) :
         global score
         global head
         global segments
         global food
         if ((head.x == food.x) & (head.y == food.y)):
-            makenewfood()
+            makenewfood(self)
             score = score + 1
             newtail = tailSegment()
             newtail.x = head.x
@@ -121,7 +121,7 @@ class snake:
         head.y = 16
         head.direction = Direction.LEFT
         ##setup food
-        makenewfood()
+        self.makenewfood()
         ##setup start of tail
         newtail = tailSegment()
         newtail.x = head.x-1
@@ -134,15 +134,15 @@ class snake:
 
 
     ##update loop
-    def update():
+    def update(self):
         ##check for controller input
         ##for now randomize direction
         global head
         head.direction = random.randint(0, 3)
 
         global segments
-        foodcheck()
-        movehead()
+        foodcheck(self)
+        movehead(self)
         for seg in segments:
-            moveseg(seg)
+            moveseg(self,seg)
         
