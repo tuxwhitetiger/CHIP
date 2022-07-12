@@ -1,14 +1,14 @@
 #!/usr/bin/python
 from email.mime import base
 import socket
+from turtle import clear
 from PIL import Image
 from PIL import GifImagePlugin
 from colour import Color as Col
 import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 import time
-
-
+from snake import *
 
 HOST = "127.0.0.1"  # The server's hostname or IP address
 PORT = 65432  # The port used by the server
@@ -98,9 +98,34 @@ def showHappyFace():
             blinkAdition = (random.randint(0, 5000)/1000)
 
 
+def showSnakeFace():
+    mysnake = snake()
+    mysnake.setup()
+    foodcolor =  graphics.Color(0, 255, 0) #random color
+    headcolor =  graphics.Color(255, 0, 0) #random color
+    bodycolor =  graphics.Color(255, 255, 255) #random color
+    offscreen_canvas = matrix.CreateFrameCanvas()
+    while True:
+        checkface = networksendGetface()
+        if checkface not in face:
+            face = checkface
+            break
+
+        mysnake.update()
+        offscreen_canvas.clear()
+        #drawfood
+        graphics.DrawLine(offscreen_canvas, mysnake.food.x, mysnake.food.y, mysnake.food.x, mysnake.food.y, foodcolor)
+        #drawhead
+        graphics.DrawLine(offscreen_canvas, mysnake.head.x, mysnake.head.y, mysnake.head.x, mysnake.head.y, headcolor)
+        #draw body
+        for seg in mysnake.segments:
+            graphics.DrawLine(offscreen_canvas, seg.x, seg.y, seg.x, seg.y, bodycolor)
+        
+        matrix.SwapOnVSync(offscreen_canvas)
 
 
-   
+
+
 
 def showFlagFace():
     showStaticGif("./faces/flag.gif")
@@ -177,33 +202,13 @@ def showUwUFace():
                 break
         i = i+1
         offscreen_canvas.Clear()
-        #new pick colour
+        #pick colour
         continuum += 0.005
         if continuum >= 1:
             continuum = 0
         c = Col(hsl=(continuum, 1, 0.5))
         red,green,blue = c.rgb
         textColor =  graphics.Color(red*255,green*255,blue*255)
-        #pick colour
-        #continuum += 1
-        #continuum %= 3 * 255
-        #red = 255
-        #green = 255
-        #blue = 255
-        #if continuum <= 255:
-        #    c = continuum
-        #    blue = 255 - c
-        #    red = c
-        #elif continuum > 255 and continuum <= 511:
-        #    c = continuum - 256
-        #    red = 255 - c
-        #    green = c
-        #else:
-        #    c = continuum - 512
-        #    green = 255 - c
-        #    blue = c
-        #textColor =  graphics.Color(red,green,blue)
-        
         #pick location
         #check bounding boxs
         if(y>=32):
@@ -241,7 +246,7 @@ while True:
     elif "Flag face" in face:
         showFlagFace()
     elif "Angry face" in face:
-        showAngryFace()
+        showSnakeFace()
     elif "Gif face" in face:
         showGifFace()
     elif "Oh face" in face:
