@@ -5,7 +5,6 @@ from turtle import clear
 from PIL import Image
 from PIL import GifImagePlugin
 from colour import Color as Col
-import random
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 import time
 from snake import *
@@ -97,6 +96,8 @@ def showHappyFace():
             doubleBlink = bool(random.getrandbits(1))
             blinkAdition = (random.randint(0, 5000)/1000)
 
+        
+    
 
 def showSnakeFace():
     mysnake = snake()
