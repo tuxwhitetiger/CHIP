@@ -4,7 +4,6 @@ from pickle import FALSE, NONE
 from random import random
 
 
-
 class Direction(Enum):
     UP=0
     DOWN=1
@@ -107,7 +106,7 @@ class snake:
 
 
     ##setup
-    def setup():
+    def setup(self):
         
         global head
         global segments

@@ -7,6 +7,7 @@ from PIL import GifImagePlugin
 from colour import Color as Col
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 import time
+from random import random
 from snake import *
 
 HOST = "127.0.0.1"  # The server's hostname or IP address
