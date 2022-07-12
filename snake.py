@@ -94,11 +94,6 @@ class snake:
         global head
         global segments
         global food
-        score = 0
-        playing =True
-        head = Head()
-        segments = []
-        food = Food()
         if ((head.x == food.x) & (head.y == food.y)):
             makenewfood()
             score = score + 1
@@ -112,10 +107,15 @@ class snake:
 
     ##setup
     def setup(self):
-        
+        global score
         global head
         global segments
         global food
+        score = 0
+        playing =True
+        head = Head()
+        segments = []
+        food = Food()
         ##setup head
         head.x = 8
         head.y = 16
