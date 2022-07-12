@@ -90,10 +90,15 @@ class snake:
             gameover()
 
     def foodcheck() :
-        global segments
-        global head
         global score
+        global head
+        global segments
         global food
+        score = 0
+        playing =True
+        head = Head()
+        segments = []
+        food = Food()
         if ((head.x == food.x) & (head.y == food.y)):
             makenewfood()
             score = score + 1
