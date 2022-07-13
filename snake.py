@@ -1,6 +1,6 @@
 from array import *
 from enum import Enum
-from random import Random as rand
+from random import random
 
 
 class Direction(Enum):
@@ -37,8 +37,8 @@ class aSnake :
 
     def makenewfood():
         global food
-        food.x = rand.randint(0, 64)
-        food.y = rand.randint(0, 32)
+        food.x = random.randint(0, 64)
+        food.y = random.randint(0, 32)
 
     def __init__(self):
         global score
@@ -55,8 +55,8 @@ class aSnake :
         head.y = 16
         head.direction = Direction.LEFT
         ##setup food
-        food.x = rand.randint(rand,0, 64)
-        food.y = rand.randint(rand,0, 32)
+        food.x = random.randint(0, 64)
+        food.y = random.randint(0, 32)
         ##setup start of tail
         newtail = tailSegment()
         newtail.x = head.x-1
@@ -132,9 +132,9 @@ class aSnake :
     ##update loop
     def update(self):
         ##check for controller input
-        ##for now randomize direction
+        ##for now rand direction
         global head
-        head.direction = rand.randint(0, 3)
+        head.direction = random.randint(0, 3)
 
         global segments
         foodcheck()
