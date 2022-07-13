@@ -1,6 +1,6 @@
 from array import *
 from enum import Enum
-from random import randon as rand
+from random import Random as rand
 
 
 class Direction(Enum):
