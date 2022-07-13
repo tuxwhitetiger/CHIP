@@ -55,8 +55,8 @@ class aSnake :
         head.y = 16
         head.direction = Direction.LEFT
         ##setup food
-        food.x = rand.randint(0, 64)
-        food.y = rand.randint(0, 32)
+        food.x = rand.randint(rand,0, 64)
+        food.y = rand.randint(rand,0, 32)
         ##setup start of tail
         newtail = tailSegment()
         newtail.x = head.x-1
@@ -66,12 +66,12 @@ class aSnake :
         segments.append(newtail)
         score = 0
 
-    def gameover():
+    def gameover(self):
         segments.clear()
         playing = False
 
 
-    def moveseg(seg):
+    def moveseg(self,seg):
         if(seg.moving == True): 
             if(seg.direction == 0): #up
                 seg.y -= 1
@@ -88,7 +88,7 @@ class aSnake :
         elif ((seg.x == seg.following.x) & (seg.y == seg.following.y)) : ## if its at the end of the tail start moving
             seg.startmoving = True
         
-    def movehead():
+    def movehead(self):
         global head
         # death on wall colition logic needs adding .... this needs to be on head logic 
         if(head.direction == 0): #up
@@ -114,7 +114,7 @@ class aSnake :
             #death
             gameover()
 
-    def foodcheck() :
+    def foodcheck(self) :
         global score
         global head
         global segments
@@ -130,7 +130,7 @@ class aSnake :
             segments.append(newtail)
 
     ##update loop
-    def update():
+    def update(self):
         ##check for controller input
         ##for now randomize direction
         global head
