@@ -28,9 +28,9 @@ class tailSegment :
     moving=False
     startmoving=False
 
-class snake:
+class aSnake :
     score = 0
-    playing =True
+    playing = True
     head = Head()
     segments = []
     food = Food()
