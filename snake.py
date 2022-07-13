@@ -35,17 +35,17 @@ class snake:
     segments = []
     food = Food()
 
-    def makenewfood(self):
+    def makenewfood():
         global food
         food.x = rand.randint(rand,0, 64)
         food.y = rand.randint(rand,0, 32)
 
-    def gameover(self):
+    def gameover():
         segments.clear()
         playing = False
 
 
-    def moveseg(self,seg):
+    def moveseg(seg):
         if(seg.moving == True): 
             if(seg.direction == 0): #up
                 seg.y -= 1
@@ -62,7 +62,7 @@ class snake:
         elif ((seg.x == seg.following.x) & (seg.y == seg.following.y)) : ## if its at the end of the tail start moving
             seg.startmoving = True
         
-    def movehead(self):
+    def movehead():
         global head
         # death on wall colition logic needs adding .... this needs to be on head logic 
         if(head.direction == 0): #up
@@ -77,24 +77,24 @@ class snake:
         #cheack for wall colition
         if(head.y == 0):
             #death
-            gameover(self)
+            gameover()
         elif(head.y == 32):
             #death
-            gameover(self)
+            gameover()
         elif(head.x == 0):
             #death
-            gameover(self)
+            gameover()
         elif(head.x == 64):
             #death
-            gameover(self)
+            gameover()
 
-    def foodcheck(self) :
+    def foodcheck() :
         global score
         global head
         global segments
         global food
         if ((head.x == food.x) & (head.y == food.y)):
-            makenewfood(self)
+            makenewfood()
             score = score + 1
             newtail = tailSegment()
             newtail.x = head.x
@@ -105,7 +105,7 @@ class snake:
 
 
     ##setup
-    def setup(self):
+    def setup():
         global score
         global head
         global segments
@@ -120,7 +120,7 @@ class snake:
         head.y = 16
         head.direction = Direction.LEFT
         ##setup food
-        self.makenewfood()
+        makenewfood()
         ##setup start of tail
         newtail = tailSegment()
         newtail.x = head.x-1
@@ -133,15 +133,15 @@ class snake:
 
 
     ##update loop
-    def update(self):
+    def update():
         ##check for controller input
         ##for now randomize direction
         global head
-        head.direction = rand.randint(rand,0, 3)
+        head.direction = rand.randint(0, 3)
 
         global segments
-        foodcheck(self)
-        movehead(self)
+        foodcheck()
+        movehead()
         for seg in segments:
-            moveseg(self,seg)
+            moveseg(seg)
         
