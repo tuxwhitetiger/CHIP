@@ -37,8 +37,8 @@ class aSnake :
 
     def makenewfood():
         global food
-        food.x = rand.randint(rand,0, 64)
-        food.y = rand.randint(rand,0, 32)
+        food.x = rand.randint(0, 64)
+        food.y = rand.randint(0, 32)
 
     def __init__(self):
         global score
@@ -55,8 +55,8 @@ class aSnake :
         head.y = 16
         head.direction = Direction.LEFT
         ##setup food
-        food.x = rand.randint(rand,0, 64)
-        food.y = rand.randint(rand,0, 32)
+        food.x = rand.randint(0, 64)
+        food.y = rand.randint(0, 32)
         ##setup start of tail
         newtail = tailSegment()
         newtail.x = head.x-1
