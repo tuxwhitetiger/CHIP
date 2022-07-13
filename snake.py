@@ -35,6 +35,16 @@ class snake:
     segments = []
     food = Food()
 
+    def __init__(self):
+        global score
+        global head
+        global segments
+        global food
+        score = 0
+        head = Head()
+        segments = []
+        food = Food()
+
     def makenewfood():
         global food
         food.x = rand.randint(rand,0, 64)
