@@ -37,8 +37,8 @@ class snake:
 
     def makenewfood(self):
         global food
-        food.x = rand.randint(self,0, 64)
-        food.y = rand.randint(self,0, 32)
+        food.x = rand.randint(rand,0, 64)
+        food.y = rand.randint(rand,0, 32)
 
     def gameover(self):
         segments.clear()
@@ -137,7 +137,7 @@ class snake:
         ##check for controller input
         ##for now randomize direction
         global head
-        head.direction = rand.randint(self,0, 3)
+        head.direction = rand.randint(rand,0, 3)
 
         global segments
         foodcheck(self)
