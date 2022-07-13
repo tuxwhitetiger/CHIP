@@ -55,7 +55,8 @@ class aSnake :
         head.y = 16
         head.direction = Direction.LEFT
         ##setup food
-        makenewfood()
+        food.x = rand.randint(rand,0, 64)
+        food.y = rand.randint(rand,0, 32)
         ##setup start of tail
         newtail = tailSegment()
         newtail.x = head.x-1
