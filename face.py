@@ -97,12 +97,8 @@ def showHappyFace():
             doubleBlink = bool(random.getrandbits(1))
             blinkAdition = (random.randint(0, 5000)/1000)
 
-        
-    
-
 def showSnakeFace():
     mysnake = aSnake()
-    mysnake.setup()
     foodcolor =  graphics.Color(0, 255, 0) #random color
     headcolor =  graphics.Color(255, 0, 0) #random color
     bodycolor =  graphics.Color(255, 255, 255) #random color

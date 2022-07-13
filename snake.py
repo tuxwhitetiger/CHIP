@@ -35,20 +35,35 @@ class aSnake :
     segments = []
     food = Food()
 
+    def makenewfood():
+        global food
+        food.x = rand.randint(rand,0, 64)
+        food.y = rand.randint(rand,0, 32)
+
     def __init__(self):
         global score
         global head
         global segments
         global food
         score = 0
+        playing =True
         head = Head()
         segments = []
         food = Food()
-
-    def makenewfood():
-        global food
-        food.x = rand.randint(rand,0, 64)
-        food.y = rand.randint(rand,0, 32)
+        ##setup head
+        head.x = 8
+        head.y = 16
+        head.direction = Direction.LEFT
+        ##setup food
+        makenewfood()
+        ##setup start of tail
+        newtail = tailSegment()
+        newtail.x = head.x-1
+        newtail.y = head.y
+        newtail.direction = head.direction
+        newtail.following = segments.index(segments.count()-1)
+        segments.append(newtail)
+        score = 0
 
     def gameover():
         segments.clear()
@@ -112,35 +127,6 @@ class aSnake :
             newtail.direction = head.direction
             newtail.following = segments.index(segments.count()-1)
             segments.append(newtail)
-
-
-    ##setup
-    def setup():
-        global score
-        global head
-        global segments
-        global food
-        score = 0
-        playing =True
-        head = Head()
-        segments = []
-        food = Food()
-        ##setup head
-        head.x = 8
-        head.y = 16
-        head.direction = Direction.LEFT
-        ##setup food
-        makenewfood()
-        ##setup start of tail
-        newtail = tailSegment()
-        newtail.x = head.x-1
-        newtail.y = head.y
-        newtail.direction = head.direction
-        newtail.following = segments.index(segments.count()-1)
-        segments.append(newtail)
-
-        score = 0
-
 
     ##update loop
     def update():
