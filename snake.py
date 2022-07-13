@@ -1,6 +1,5 @@
 from array import *
 from enum import Enum
-from pickle import FALSE, NONE
 from random import random
 
 
@@ -25,7 +24,7 @@ class tailSegment :
     x=0
     y=0
     direction=Direction.NONE
-    following=NONE
+    following=None
     moving=False
     startmoving=False
 
