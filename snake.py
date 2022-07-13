@@ -42,6 +42,7 @@ class aSnake :
         food.y = random.randint(0, 32)
 
     def __init__(self):
+        print(random, type(random))
         global score
         global head
         global segments
