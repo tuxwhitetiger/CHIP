@@ -7,7 +7,7 @@ from PIL import GifImagePlugin
 from colour import Color as Col
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 import time
-from random import *
+from random import random
 from snake import *
 
 HOST = "127.0.0.1"  # The server's hostname or IP address
@@ -101,7 +101,7 @@ def showHappyFace():
     
 
 def showSnakeFace():
-    mysnake = snake()
+    mysnake = aSnake()
     mysnake.setup()
     foodcolor =  graphics.Color(0, 255, 0) #random color
     headcolor =  graphics.Color(255, 0, 0) #random color
