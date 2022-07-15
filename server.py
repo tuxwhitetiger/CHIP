@@ -27,7 +27,8 @@ def loadGif(fileName):
         print("\nThe Numpy 2D-Array is:")
         for i in arr:
             for j in i:
-                output.join(j+',')
+                text = j+','
+                output.join(text)
     print(output)
     return output
 
