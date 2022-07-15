@@ -20,7 +20,7 @@ socketList.append(s)
 
 def loadGif(fileName):
     image = Image.open(fileName)
-    output =''
+    output =""
     for frame in range(0,image.n_frames):
         image.seek(frame)
         arr = np.array(image.convert('RGB'))
@@ -28,7 +28,7 @@ def loadGif(fileName):
         for i in arr:
             for j in i:
                 text = str(j)+','
-                output.join(text)
+                output+=text
     print(output)
     return output
 
