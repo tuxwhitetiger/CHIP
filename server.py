@@ -1,5 +1,8 @@
 import socket
 from _thread import *
+from PIL import Image
+from PIL import GifImagePlugin
+import numpy as np
 
 HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
 PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
@@ -14,6 +17,14 @@ s.listen()
 socketList = []
 
 socketList.append(s)
+
+def loadGif(fileName):
+    image = Image.open(fileName)
+    arr = np.array(image)
+    print("The Array is: ", arr)
+
+
+loadGif('faces/test.gif')
 
 while True:
     ##roll though list of avalible sockets
