@@ -20,13 +20,16 @@ socketList.append(s)
 
 def loadGif(fileName):
     image = Image.open(fileName)
-    arr = np.array(image.convert('RGB'))
-    print("\nThe Numpy 2D-Array is:")
-    for i in arr:
-        for j in i:
-            print(j, end=" ")
-        print()
-
+    output =''
+    for frame in range(0,image.n_frames):
+        image.seek(frame)
+        arr = np.array(image.convert('RGB'))
+        print("\nThe Numpy 2D-Array is:")
+        for i in arr:
+            for j in i:
+                output.join(j+',')
+    print(output)
+    return output
 
 loadGif('faces/test.gif')
 
@@ -52,6 +55,10 @@ while True:
                     elif "Set Face:" in info:
                         face = info.split(':',1)[1]
                         sock.sendall("done".encode())
+                    elif "Pull Gif:" in info:
+                        giftoget = info.split(':',1)[1]
+                        gifdata = loadGif('faces/'+giftoget)
+                        sock.sendall(gifdata.encode())
                     else:
                         print("could not deal with:",info)
             except socket.timeout:
