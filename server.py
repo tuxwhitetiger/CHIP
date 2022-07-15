@@ -29,7 +29,8 @@ def loadGif(fileName):
             for j in i:
                 text = str(j)+','
                 output+=text
-        output+="DONE"
+        output+="FRAME"
+    output+="DONE"
     print(output)
     return output
 
