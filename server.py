@@ -21,7 +21,11 @@ socketList.append(s)
 def loadGif(fileName):
     image = Image.open(fileName)
     arr = np.array(image)
-    print("The Array is: ", arr)
+    print("\nThe Numpy 2D-Array is:")
+    for i in arr_2d:
+        for j in i:
+            print(j, end=" ")
+        print()
 
 
 loadGif('faces/test.gif')
