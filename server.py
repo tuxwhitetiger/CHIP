@@ -22,7 +22,7 @@ def loadGif(fileName):
     image = Image.open(fileName)
     arr = np.array(image)
     print("\nThe Numpy 2D-Array is:")
-    for i in arr_2d:
+    for i in arr:
         for j in i:
             print(j, end=" ")
         print()
