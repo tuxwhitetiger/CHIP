@@ -24,7 +24,6 @@ def loadGif(fileName):
     for frame in range(0,image.n_frames):
         image.seek(frame)
         arr = np.array(image.convert('RGB'))
-        print("\nThe Numpy 2D-Array is:")
         for i in arr:
             for j in i:
                 text = str(j)+','
