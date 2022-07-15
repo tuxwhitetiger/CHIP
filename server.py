@@ -20,7 +20,7 @@ socketList.append(s)
 
 def loadGif(fileName):
     image = Image.open(fileName)
-    arr = np.array(image)
+    arr = np.array(image.convert('RGB'))
     print("\nThe Numpy 2D-Array is:")
     for i in arr:
         for j in i:
