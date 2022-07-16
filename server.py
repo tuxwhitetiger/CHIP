@@ -28,8 +28,8 @@ def loadGif(fileName):
             for j in i:
                 text = str(j)+','
                 output+=text
-            output+="#"
-        output+="!"
+            output+="R"
+        output+="F"
     output+="DONE"
     print(output)
     return output
