@@ -30,3 +30,4 @@ on
 off
 commands
 say
+cancel

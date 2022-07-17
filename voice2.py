@@ -85,6 +85,22 @@ while True:
                         confirmspeak("Gif face")
                     elif "SET OH FACE" in guess.hypstr:
                         confirmspeak("Oh face")
+                    elif "SET SNAKE FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Snake face")
+                    elif "SET OVERHEAT FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Overheat face")
+                    elif "SET OVER HEAT FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Overheat face")
+                    elif "SET SEE WOOD FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Cwood face")
+                    elif "SET LOW BATTERY FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Lowbatt face")
+                    elif "SET PACk MAN FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Pacman face")
+                    elif "SET PACkMAN FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Pacman face")
+                    elif "SET MATRIX FACE" in decoder.hyp().hypstr:
+                        confirmspeak("Matrix face")
                     elif "VOLTAGE" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
                         speak("canceled")
                         faceToConfirm = lastface
