@@ -1,4 +1,4 @@
-Language model created by QuickLM on Sun Jun 26 07:51:57 EDT 2022
+Language model created by QuickLM on Sun Jul 17 12:47:57 EDT 2022
 Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
 
 The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
@@ -7,75 +7,147 @@ The code that was used to produce this language model is available in Open Sourc
 Please visit http://www.speech.cs.cmu.edu/tools/ for more information
 
 The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
-This model based on a corpus of 14 sentences and 16 words
+This model based on a corpus of 32 sentences and 34 words
 
 \data\
-ngram 1=16
-ngram 2=28
-ngram 3=14
+ngram 1=34
+ngram 2=64
+ngram 3=32
 
 \1-grams:
 -0.7782 </s> -0.3010
 -0.7782 <s> -0.2218
--1.9243 ANGRY -0.2218
--1.9243 CHIP -0.2218
--1.9243 CONFIRM -0.2218
--1.9243 FACE -0.2218
--1.9243 FLAG -0.2218
--1.9243 GET -0.2218
--1.9243 GIF -0.2218
--1.9243 HAPPY -0.2218
--1.9243 HELLO -0.2218
--1.9243 OH -0.2218
--1.9243 SAD -0.2218
--1.9243 SET -0.2218
--1.9243 VOLTAGE -0.2218
--1.9243 WHAT -0.2218
+-2.2833 ANGRY -0.2218
+-2.2833 BATTERY -0.2218
+-2.2833 CHIP -0.2218
+-2.2833 COMMANDS -0.2218
+-2.2833 CONFIRM -0.2218
+-2.2833 FACE -0.2218
+-2.2833 FAN -0.2218
+-2.2833 FLAG -0.2218
+-2.2833 GET -0.2218
+-2.2833 GIF -0.2218
+-2.2833 HAPPY -0.2218
+-2.2833 HEAT -0.2218
+-2.2833 HELLO -0.2218
+-2.2833 LOW -0.2218
+-2.2833 MAN -0.2218
+-2.2833 MATRIX -0.2218
+-2.2833 OFF -0.2218
+-2.2833 OH -0.2218
+-2.2833 ON -0.2218
+-2.2833 OVER -0.2218
+-2.2833 OVERHEAT -0.2218
+-2.2833 PACK -0.2218
+-2.2833 PACMAN -0.2218
+-2.2833 SAD -0.2218
+-2.2833 SAY -0.2218
+-2.2833 SEE -0.2218
+-2.2833 SET -0.2218
+-2.2833 SNAKE -0.2218
+-2.2833 TEST -0.2218
+-2.2833 VOLTAGE -0.2218
+-2.2833 WHAT -0.2218
+-2.2833 WOOD -0.2218
 
 \2-grams:
--1.4472 <s> ANGRY 0.0000
--1.4472 <s> CHIP 0.0000
--1.4472 <s> CONFIRM 0.0000
--1.4472 <s> FACE 0.0000
--1.4472 <s> FLAG 0.0000
--1.4472 <s> GET 0.0000
--1.4472 <s> GIF 0.0000
--1.4472 <s> HAPPY 0.0000
--1.4472 <s> HELLO 0.0000
--1.4472 <s> OH 0.0000
--1.4472 <s> SAD 0.0000
--1.4472 <s> SET 0.0000
--1.4472 <s> VOLTAGE 0.0000
--1.4472 <s> WHAT 0.0000
+-1.8062 <s> ANGRY 0.0000
+-1.8062 <s> BATTERY 0.0000
+-1.8062 <s> CHIP 0.0000
+-1.8062 <s> COMMANDS 0.0000
+-1.8062 <s> CONFIRM 0.0000
+-1.8062 <s> FACE 0.0000
+-1.8062 <s> FAN 0.0000
+-1.8062 <s> FLAG 0.0000
+-1.8062 <s> GET 0.0000
+-1.8062 <s> GIF 0.0000
+-1.8062 <s> HAPPY 0.0000
+-1.8062 <s> HEAT 0.0000
+-1.8062 <s> HELLO 0.0000
+-1.8062 <s> LOW 0.0000
+-1.8062 <s> MAN 0.0000
+-1.8062 <s> MATRIX 0.0000
+-1.8062 <s> OFF 0.0000
+-1.8062 <s> OH 0.0000
+-1.8062 <s> ON 0.0000
+-1.8062 <s> OVER 0.0000
+-1.8062 <s> OVERHEAT 0.0000
+-1.8062 <s> PACK 0.0000
+-1.8062 <s> PACMAN 0.0000
+-1.8062 <s> SAD 0.0000
+-1.8062 <s> SAY 0.0000
+-1.8062 <s> SEE 0.0000
+-1.8062 <s> SET 0.0000
+-1.8062 <s> SNAKE 0.0000
+-1.8062 <s> TEST 0.0000
+-1.8062 <s> VOLTAGE 0.0000
+-1.8062 <s> WHAT 0.0000
+-1.8062 <s> WOOD 0.0000
 -0.3010 ANGRY </s> -0.3010
+-0.3010 BATTERY </s> -0.3010
 -0.3010 CHIP </s> -0.3010
+-0.3010 COMMANDS </s> -0.3010
 -0.3010 CONFIRM </s> -0.3010
 -0.3010 FACE </s> -0.3010
+-0.3010 FAN </s> -0.3010
 -0.3010 FLAG </s> -0.3010
 -0.3010 GET </s> -0.3010
 -0.3010 GIF </s> -0.3010
 -0.3010 HAPPY </s> -0.3010
+-0.3010 HEAT </s> -0.3010
 -0.3010 HELLO </s> -0.3010
+-0.3010 LOW </s> -0.3010
+-0.3010 MAN </s> -0.3010
+-0.3010 MATRIX </s> -0.3010
+-0.3010 OFF </s> -0.3010
 -0.3010 OH </s> -0.3010
+-0.3010 ON </s> -0.3010
+-0.3010 OVER </s> -0.3010
+-0.3010 OVERHEAT </s> -0.3010
+-0.3010 PACK </s> -0.3010
+-0.3010 PACMAN </s> -0.3010
 -0.3010 SAD </s> -0.3010
+-0.3010 SAY </s> -0.3010
+-0.3010 SEE </s> -0.3010
 -0.3010 SET </s> -0.3010
+-0.3010 SNAKE </s> -0.3010
+-0.3010 TEST </s> -0.3010
 -0.3010 VOLTAGE </s> -0.3010
 -0.3010 WHAT </s> -0.3010
+-0.3010 WOOD </s> -0.3010
 
 \3-grams:
 -0.3010 <s> ANGRY </s>
+-0.3010 <s> BATTERY </s>
 -0.3010 <s> CHIP </s>
+-0.3010 <s> COMMANDS </s>
 -0.3010 <s> CONFIRM </s>
 -0.3010 <s> FACE </s>
+-0.3010 <s> FAN </s>
 -0.3010 <s> FLAG </s>
 -0.3010 <s> GET </s>
 -0.3010 <s> GIF </s>
 -0.3010 <s> HAPPY </s>
+-0.3010 <s> HEAT </s>
 -0.3010 <s> HELLO </s>
+-0.3010 <s> LOW </s>
+-0.3010 <s> MAN </s>
+-0.3010 <s> MATRIX </s>
+-0.3010 <s> OFF </s>
 -0.3010 <s> OH </s>
+-0.3010 <s> ON </s>
+-0.3010 <s> OVER </s>
+-0.3010 <s> OVERHEAT </s>
+-0.3010 <s> PACK </s>
+-0.3010 <s> PACMAN </s>
 -0.3010 <s> SAD </s>
+-0.3010 <s> SAY </s>
+-0.3010 <s> SEE </s>
 -0.3010 <s> SET </s>
+-0.3010 <s> SNAKE </s>
+-0.3010 <s> TEST </s>
 -0.3010 <s> VOLTAGE </s>
 -0.3010 <s> WHAT </s>
+-0.3010 <s> WOOD </s>
 
 \end\

@@ -70,6 +70,35 @@ while True:
                 elif "SET OH FACE" in decoder.hyp().hypstr:
                     print ('set oh face')
                     networksendsetface('Oh face')
+                elif "SET SNAKE FACE" in decoder.hyp().hypstr:
+                    print ('set SNAKE face')
+                    networksendsetface('Snake face')
+                elif "SET OVERHEAT FACE" in decoder.hyp().hypstr:
+                    print ('set OVERHEAT face')
+                    networksendsetface('Overheat face')
+                elif "SET OVER HEAT FACE" in decoder.hyp().hypstr:
+                    print ('set OVERHEAT face')
+                    networksendsetface('Overheat face')
+                elif "SET SEE WOOD FACE" in decoder.hyp().hypstr:
+                    print ('set cwood face')
+                    networksendsetface('Cwood face')
+                elif "SET LOW BATTERY FACE" in decoder.hyp().hypstr:
+                    print ('set lowbatt face')
+                    networksendsetface('Lowbatt face')
+                elif "SET PACk MAN FACE" in decoder.hyp().hypstr:
+                    print ('set pacman face')
+                    networksendsetface('Pacman face')
+                elif "SET PACkMAN FACE" in decoder.hyp().hypstr:
+                    print ('set pacman face')
+                    networksendsetface('Pacman face')
+                elif "SET MATRIX FACE" in decoder.hyp().hypstr:
+                    print ('set MATRIX face')
+                    networksendsetface('Matrix face')
+                
+
+
+
+
                 decoder.start_utt()
     else:
         break
