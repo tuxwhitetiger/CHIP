@@ -20,6 +20,7 @@ socketList.append(s)
 
 def loadGif(fileName):
     image = Image.open(fileName)
+    print(fileName)
     output =""
     for frame in range(0,image.n_frames):
         image.seek(frame)
@@ -31,7 +32,7 @@ def loadGif(fileName):
             output+="R"
         output+="F"
     output+="DONE"
-    print(output)
+    print("DONE")
     return output
 
 loadGif('faces/test.gif')
