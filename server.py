@@ -56,6 +56,8 @@ while True:
                 if info:
                     if "Get Face" in info:
                         sock.sendall(face.encode())
+                        if("SHAKE BALL" in face):
+                            face = "8 Ball Face"
                     elif "Set Face:" in info:
                         face = info.split(':',1)[1]
                         sock.sendall("done".encode())
