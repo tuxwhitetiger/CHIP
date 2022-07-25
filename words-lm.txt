@@ -31,3 +31,5 @@ off
 commands
 say
 cancel
+eight
+ball
