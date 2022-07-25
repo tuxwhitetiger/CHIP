@@ -101,7 +101,7 @@ while True:
                         confirmspeak("Pacman face")
                     elif "SET MATRIX FACE" in guess.hypstr:
                         confirmspeak("Matrix face")
-                    elif "SET MAGIC BALL FACE" in guess.hypstr:
+                    elif "SET BALL FACE" in guess.hypstr:
                         confirmspeak("8 Ball Face")
                     elif "SHAKE BALL" in guess.hypstr:
                         confirmspeak("SHAKE BALL")
