@@ -71,10 +71,6 @@ while True:
                     if "CONFIRM" in guess.hypstr:
                         lastface = faceToConfirm
                         speak(networksendsetface(faceToConfirm))
-                        if("SHAKE BALL" in faceToConfirm):
-                            lastface="8 Ball Face"
-                            faceToConfirm="8 Ball Face"
-                        
                     elif "SET SAD FACE" in guess.hypstr:
                         confirmspeak("Sad face")
                     elif "SET HAPPY FACE" in guess.hypstr:

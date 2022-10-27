@@ -35,7 +35,7 @@ def loadGif(fileName):
     print("DONE")
     return output
 
-loadGif('faces/test.gif')
+
 
 while True:
     ##roll though list of avalible sockets

@@ -34,6 +34,12 @@ git -C ~/CHIP pull https://github.com/tuxwhitetiger/CHIP.git
 sudo apt-get install espeak
 
 
+//compile
+git -C ~/CHIP3 pull https://github.com/tuxwhitetiger/CHIP3.0.git
+cd ~/CHIP3/CHIP 
+sudo mcs -out:bob.exe *.cs /r:RGBLedMatrix.dll
+
+
 
 
 
