@@ -34,3 +34,6 @@ cancel
 eight
 ball
 shake
+halloween
+shock
+shocked
