@@ -105,6 +105,8 @@ while True:
                         confirmspeak("8 Ball Face")
                     elif "SHAKE BALL" in guess.hypstr:
                         confirmspeak("SHAKE BALL")
+                    elif "SET HALLOWEEN FACE" in guess.hypstr:
+                        confirmspeak("HALLOWEEN FACE")
                     elif "CANCEL" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
                         speak("canceled")
                         faceToConfirm = lastface
