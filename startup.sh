@@ -1,5 +1,6 @@
 #!/bin/bash
 sleep 30
+git -C /home/tux/CHIP pull https://github.com/tuxwhitetiger/CHIP.git
 git -C /home/tux/CHIP3 pull https://github.com/tuxwhitetiger/CHIP3.0.git
 cd /home/tux/CHIP3/CHIP 
 sudo mcs -out:bob.exe *.cs /r:RGBLedMatrix.dll
