@@ -56,7 +56,7 @@ def speak(message):
     subprocess.Popen(['espeak', message])
 
 def reboot():
-    subprocess.Popen(['sudo reboot now'])
+    subprocess.Popen(['sudo', 'reboot', 'now'])
 
 
 while True:
