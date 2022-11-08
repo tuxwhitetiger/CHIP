@@ -38,3 +38,5 @@ halloween
 shock
 shocked
 spooky
+panic
+reboot

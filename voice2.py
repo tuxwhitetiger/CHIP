@@ -55,7 +55,8 @@ def speak(message):
     
     subprocess.Popen(['espeak', message])
 
-
+def reboot():
+    subprocess.Popen(['sudo reboot now'])
 
 
 while True:
@@ -108,10 +109,12 @@ while True:
                     elif "SET HALLOWEEN FACE" in guess.hypstr:
                         confirmspeak("HALLOWEEN FACE")
                     elif "SAY COMMANDS" in guess.hypstr:
-                        confirmspeak("SET SAD FACE, SET HAPPY FACE, SET ANGRY FACE, SET WHAT FACE, SET FLAG FACE, SET GIF FACE, SET OH FACE, SET SNAKE FACE , SET OVERHEAT FACE, SET SEE WOOD FACE, SET LOW BATTERY FACE, SET PACk MAN FACE, SET MATRIX FACE, SET BALL FACE, SHAKE BALL, SET HALLOWEEN FACE")   
+                        confirmspeak("panic reboot, SET SAD FACE, SET HAPPY FACE, SET ANGRY FACE, SET WHAT FACE, SET FLAG FACE, SET GIF FACE, SET OH FACE, SET SNAKE FACE , SET OVERHEAT FACE, SET SEE WOOD FACE, SET LOW BATTERY FACE, SET PACk MAN FACE, SET MATRIX FACE, SET BALL FACE, SHAKE BALL, SET HALLOWEEN FACE")   
                     elif "CANCEL" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
                         speak("canceled")
                         faceToConfirm = lastface
+                    elif "PANIC REBOOT" in guess.hypstr:
+                        reboot()
                 decoder.start_utt()
     else:
         break
