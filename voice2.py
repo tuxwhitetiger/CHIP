@@ -58,7 +58,7 @@ def speak(message):
 def reboot():
     subprocess.Popen(['sudo', 'reboot', 'now'])
 
-
+subprocess.Popen(['espeak', "CHIP online"])
 while True:
     buf = stream.read(1024)
     if buf:
