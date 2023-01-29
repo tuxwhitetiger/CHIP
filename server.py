@@ -6,7 +6,7 @@ import numpy as np
 
 HOST = "0.0.0.0"  # Standard loopback interface address (localhost)
 PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
-alarm = ""
+alarm = "null"
 face = "Happy face"
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -63,6 +63,7 @@ while True:
                         sock.sendall("done".encode())
                     elif "Get Alarm" in info:
                         sock.sendall(alarm.encode())
+                        alarm = "null"
                     elif "Set Alarm" in info:
                         alarm = info.split(':',1)[1]
                         sock.sendall("done".encode())
