@@ -33,8 +33,19 @@ network.connect((HOST, PORT))
 lastface="Happy face"
 faceToConfirm="Happy face"
 
+alarmToConfirm=""
+
 def networksendsetface(message):
     data = "Set Face:"+message
+    print(data)
+    network.sendall(data.encode())
+    print("awating responce")
+    data = network.recv(1024)
+    print("recived:", data.decode('utf-8'))
+    return data.decode('utf-8')
+
+def networksendsetalarm(message):
+    data = message
     print(data)
     network.sendall(data.encode())
     print("awating responce")
@@ -47,6 +58,12 @@ def confirmspeak(message):
     global lastface
     lastface=faceToConfirm
     faceToConfirm=message
+    confirm = 'confirm '
+    messageToRead = confirm + message
+    subprocess.Popen(['espeak', messageToRead])
+
+def confirmAlarm(message):
+    alarmToConfirm = message
     confirm = 'confirm '
     messageToRead = confirm + message
     subprocess.Popen(['espeak', messageToRead])
@@ -69,7 +86,9 @@ while True:
                 decoder.end_utt()
                 guess = decoder.hyp()
                 if guess != None:
-                    if "CONFIRM" in guess.hypstr:
+                    if "CONFIRM ALARM" in guess.hypstr:
+                        speak(networksendsetalarm(alarmToConfirm))
+                    elif "CONFIRM" in guess.hypstr:
                         lastface = faceToConfirm
                         speak(networksendsetface(faceToConfirm))
                     elif "SET SAD FACE" in guess.hypstr:
@@ -108,6 +127,10 @@ while True:
                         confirmspeak("SHAKE BALL")
                     elif "SET HALLOWEEN FACE" in guess.hypstr:
                         confirmspeak("HALLOWEEN FACE")
+                    elif "SET ALARM" in guess.hypstr:
+                        confirmAlarm(guess.hypstr)
+                    elif "SET TIMER" in guess.hypstr:
+                        confirmAlarm(guess.hypstr)
                     elif "SAY COMMANDS" in guess.hypstr:
                         confirmspeak("panic reboot, SET SAD FACE, SET HAPPY FACE, SET ANGRY FACE, SET WHAT FACE, SET FLAG FACE, SET GIF FACE, SET OH FACE, SET SNAKE FACE , SET OVERHEAT FACE, SET SEE WOOD FACE, SET LOW BATTERY FACE, SET PACk MAN FACE, SET MATRIX FACE, SET BALL FACE, SHAKE BALL, SET HALLOWEEN FACE")   
                     elif "CANCEL" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
@@ -119,5 +142,7 @@ while True:
     else:
         break
 decoder.end_utt()
+
+
 
 
