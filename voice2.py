@@ -45,7 +45,7 @@ def networksendsetface(message):
     return data.decode('utf-8')
 
 def networksendsetalarm(message):
-    data = message
+    data = "Set Alarm:"+message
     print(data)
     network.sendall(data.encode())
     print("awating responce")
