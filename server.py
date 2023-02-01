@@ -71,6 +71,10 @@ while True:
                         giftoget = info.split(':',1)[1]
                         gifdata = loadGif('faces/'+giftoget)
                         sock.sendall(gifdata.encode())
+                    elif "say:" in info:
+                        AlarmMessage = info.split(':',1)[1]
+                        subprocess.Popen(['espeak', AlarmMessage])
+                        sock.sendall(AlarmMessage.encode())
                     else:
                         print("could not deal with:",info)
             except socket.timeout:
