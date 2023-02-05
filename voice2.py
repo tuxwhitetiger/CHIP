@@ -53,6 +53,15 @@ def networksendsetalarm(message):
     print("recived:", data.decode('utf-8'))
     return data.decode('utf-8')
 
+def networksendDirectRequest(message):
+    data = "Request:"+message
+    print(data)
+    network.sendall(data.encode())
+    print("awating responce")
+    data = network.recv(1024)
+    print("recived:", data.decode('utf-8'))
+    return data.decode('utf-8')
+
 def confirmspeak(message):
     global faceToConfirm
     global lastface
@@ -76,6 +85,7 @@ def reboot():
     subprocess.Popen(['sudo', 'reboot', 'now'])
 
 subprocess.Popen(['espeak', "CHIP online"])
+
 while True:
     buf = stream.read(1024)
     if buf:
@@ -131,6 +141,8 @@ while True:
                         confirmAlarm(guess.hypstr)
                     elif "SET TIMER" in guess.hypstr:
                         confirmAlarm(guess.hypstr)
+                    elif "GET TIME" in guess.hypstr:
+                        networksendDirectRequest("GET TIME")
                     elif "SAY COMMANDS" in guess.hypstr:
                         confirmspeak("panic reboot, SET SAD FACE, SET HAPPY FACE, SET ANGRY FACE, SET WHAT FACE, SET FLAG FACE, SET GIF FACE, SET OH FACE, SET SNAKE FACE , SET OVERHEAT FACE, SET SEE WOOD FACE, SET LOW BATTERY FACE, SET PACk MAN FACE, SET MATRIX FACE, SET BALL FACE, SHAKE BALL, SET HALLOWEEN FACE")   
                     elif "CANCEL" in guess.hypstr: ## stop gap coz i don't have NO in my dict yet
