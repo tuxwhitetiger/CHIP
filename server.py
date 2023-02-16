@@ -8,6 +8,7 @@ HOST = "0.0.0.0"  # Standard loopback interface address (localhost)
 PORT = 65432  # Port to listen on (non-privileged ports are > 1023)
 alarm = "null"
 Request = "null"
+TSM = "null" #tellegram send message
 face = "Happy face"
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -81,6 +82,11 @@ while True:
                         Request = "null"
                     elif "Request:" in info:
                         Request = info.split(':',1)[1]
+                        sock.sendall("done".encode())
+                    elif "Get Telegram Send Message:" in info:
+                        sock.sendall(TSM.encode())
+                    elif "Set Telegram Send Message:" in info:
+                        TSM = info.split(':',1)[1]
                         sock.sendall("done".encode())
                     else:
                         print("could not deal with:",info)

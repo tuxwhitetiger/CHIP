@@ -81,3 +81,5 @@ hours
 minutes
 minute
 called
+message
+send
