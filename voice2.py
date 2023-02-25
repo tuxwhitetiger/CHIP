@@ -126,7 +126,7 @@ while True:
                             reboot()
                         elif "CONFIM" in guess.hypstr:
                             networksendsetTSM(TSMToConfirm)
-                        else
+                        else:
                             confirmspeak(guess)
                             TSMToConfirm = guess
                     FullDecoder.start_utt()
