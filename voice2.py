@@ -24,7 +24,7 @@ config2.set_string('-hmm', path.join(MODELDIR, 'model/en-us/en-us'))
 config2.set_string('-lm', path.join(MODELDIR, 'my.lm'))
 config2.set_string('-dict', path.join(MODELDIR, 'my.dict'))
 config2.set_string('-logfn','nul')
-Full-decoder = Decoder(config2)
+FullDecoder = Decoder(config2)
 
 telegramChatMode = False
 
@@ -111,12 +111,12 @@ while True:
     if telegramChatMode:
         buf = stream.read(2048)
         if buf:
-            decoder.process_raw(buf, False, False)
-            if decoder.get_in_speech() != in_speech_bf:
-                in_speech_bf = decoder.get_in_speech()
+            FullDecoder.process_raw(buf, False, False)
+            if FullDecoder.get_in_speech() != in_speech_bf:
+                in_speech_bf = FullDecoder.get_in_speech()
                 if not in_speech_bf:
-                    decoder.end_utt()
-                    guess = decoder.hyp()
+                    FullDecoder.end_utt()
+                    guess = FullDecoder.hyp()
                     if guess != None:
                         ##deal with text for sending to telegram
                         if "CANCEL MESSAGE" in guess.hypstr:
@@ -129,6 +129,7 @@ while True:
                         else
                             confirmspeak(guess)
                             TSMToConfirm = guess
+                    FullDecoder.start_utt()
         else:
             break
 
@@ -204,6 +205,7 @@ while True:
             break
     
 decoder.end_utt()
+FullDecoder.end_utt()
 
 
 
