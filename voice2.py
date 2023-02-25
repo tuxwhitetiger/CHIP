@@ -17,15 +17,6 @@ config.set_string('-dict', path.join(MODELDIR, 'my.dict'))
 config.set_string('-logfn','nul')
 decoder = Decoder(config)
 
-config2 = Decoder.default_config()
-config2.set_string('-hmm', path.join(MODELDIR, 'model/en-us/en-us'))
-#build a list of word one per line and pump into the following site
-#http://www.speech.cs.cmu.edu/tools/lmtool.html
-config2.set_string('-lm', path.join(MODELDIR, 'my.lm'))
-config2.set_string('-dict', path.join(MODELDIR, 'my.dict'))
-config2.set_string('-logfn','nul')
-FullDecoder = Decoder(config2)
-
 telegramChatMode = False
 
 p = pyaudio.PyAudio()
@@ -111,12 +102,12 @@ while True:
     if telegramChatMode:
         buf = stream.read(2048)
         if buf:
-            FullDecoder.process_raw(buf, False, False)
-            if FullDecoder.get_in_speech() != in_speech_bf:
-                in_speech_bf = FullDecoder.get_in_speech()
+            decoder.process_raw(buf, False, False)
+            if decoder.get_in_speech() != in_speech_bf:
+                in_speech_bf = decoder.get_in_speech()
                 if not in_speech_bf:
-                    FullDecoder.end_utt()
-                    guess = FullDecoder.hyp()
+                    decoder.end_utt()
+                    guess = decoder.hyp()
                     if guess != None:
                         ##deal with text for sending to telegram
                         if "CANCEL MESSAGE" in guess.hypstr:
@@ -129,7 +120,7 @@ while True:
                         else:
                             confirmspeak(guess)
                             TSMToConfirm = guess
-                    FullDecoder.start_utt()
+                    decoder.start_utt()
         else:
             break
 
