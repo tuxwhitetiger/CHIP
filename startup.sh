@@ -21,3 +21,4 @@ sudo systemctl start isc-dhcp-server.service
 cd /home/tux/CHIP3/CHIP/Debug/netcoreapp3.1
 sudo dotnet CHIP.dll
 
+#test
