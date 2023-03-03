@@ -17,8 +17,9 @@ cd /home/tux/CHIP
 su tux -c "python3 voice2.py &"
 sleep 15
 cd /home/tux/CHIP3/CHIP
+sudo mono bob.exe &
 sudo systemctl start isc-dhcp-server.service
-cd /home/tux/CHIP3/CHIP/Debug/netcoreapp3.1
-sudo dotnet CHIP.dll
+#cd /home/tux/CHIP3/CHIP/Debug/netcoreapp3.1
+#sudo dotnet CHIP.dll
 
 #test
