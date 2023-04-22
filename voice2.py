@@ -151,8 +151,8 @@ while True:
                             confirmspeak("Flag face")
                         elif "SET GIF FACE" in guess.hypstr:
                             confirmspeak("Gif face")
-                        elif "SET OH FACE" in guess.hypstr:
-                            confirmspeak("Oh face")
+                        elif "SET SHOCK FACE" in guess.hypstr:
+                            confirmspeak("Shock face")
                         elif "SET SNAKE FACE" in guess.hypstr:
                             confirmspeak("Snake face")
                         elif "SET OVERHEAT FACE" in guess.hypstr:
