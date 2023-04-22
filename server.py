@@ -70,8 +70,9 @@ while True:
                         alarm = info.split(':',1)[1]
                         sock.sendall("done".encode())
                     elif "Pull Gif:" in info:
-                        print(giftoget)
+                        print(info)
                         giftoget = info.split(':',1)[1]
+                        print(giftoget)
                         gifdata = loadGif('faces/'+giftoget)
                         sock.sendall(gifdata.encode())
                     elif "say:" in info:
