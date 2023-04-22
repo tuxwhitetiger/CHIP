@@ -175,6 +175,8 @@ while True:
                             confirmspeak("SHAKE BALL")
                         elif "SET HALLOWEEN FACE" in guess.hypstr:
                             confirmspeak("HALLOWEEN FACE")
+                        elif "SET LOVE FACE" in guess.hypstr:
+                            confirmspeak("LOVE FACE")
                         elif "SEND MESSAGE" in guess.hypstr:
                             telegramChatMode = True
                             speak("ready for message")
