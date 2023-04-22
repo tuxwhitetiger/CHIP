@@ -42,9 +42,15 @@ sudo mcs -out:bob.exe *.cs /r:RGBLedMatrix.dll
 
 
 
+****update code base on pi*****
 
+cd ~/CHIP
+git reset --hard HEAD
+sudo git -C ~/CHIP pull https://github.com/tuxwhitetiger/CHIP.git
 
-
+cd ~/CHIP3
+git reset --hard HEAD
+git pull https://github.com/tuxwhitetiger/CHIP3.0.git
 
 
 #build a list of word one per line and pump into the following site
@@ -53,13 +59,16 @@ sudo mcs -out:bob.exe *.cs /r:RGBLedMatrix.dll
 
 
 
+need to document the prosess manager process for systemctl systemd
+
+apps that run
+/home/tux/CHIP/server.py
+/home/tux/CHIP3/CHIP3.0/CHIP/Debug/netcoreapp3.1/CHIP.dll
+/home/tux/services-scripts/voice-Start.sh 
 
 
-
-
-
-
-
+log
+/home/tux/logs/voice-startup.log
 
 ****************USED BUT NOT NEEDED**************************
 
