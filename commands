@@ -72,6 +72,9 @@ systemctl start Chip-Voice.service
 
 
 need to document the prosess manager process for systemctl systemd
+systemd  location
+/etc/systemd/system
+
 
 apps that run
 /home/tux/CHIP/server.py
@@ -81,6 +84,11 @@ apps that run
 
 log
 /home/tux/logs/voice-startup.log
+/home/tux/logs/voice-startup.error
+
+StandardOutput=file:/home/tux/logs/voice-startup.log
+StandardError=file:/home/tux/logs/voice-startup.error
+
 
 ****************USED BUT NOT NEEDED**************************
 
@@ -127,3 +135,29 @@ make install
  tar -xf pocketsphinx-5prealpha.tar.gz 
 
 cd ../../..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/etc/modprobe.d/raspi-blacklist.conf
+blacklist vc4hdmi0
+blacklist vc4hdmi1
+
+
+
+cat /proc/asound/cards
+
