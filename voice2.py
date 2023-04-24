@@ -90,7 +90,6 @@ def confirmAlarm(message):
     subprocess.Popen(['espeak', messageToRead])
 
 def speak(message):
-    
     subprocess.Popen(['espeak', message])
 
 def reboot():
@@ -178,7 +177,7 @@ while True:
                         elif "SET LOVE FACE" in guess.hypstr:
                             confirmspeak("LOVE FACE")
                         elif "SEND MESSAGE" in guess.hypstr:
-                            telegramChatMode = True
+                            telegramChatMode = False
                             speak("ready for message")
                         elif "SET ALARM" in guess.hypstr:
                             confirmAlarm(guess.hypstr)
