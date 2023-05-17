@@ -82,6 +82,11 @@ apps that run
 /home/tux/services-scripts/voice-Start.sh 
 
 
+ExecStart=/usr/bin/python /home/tux/CHIP/server.py
+ExecStart=runuser -l  tux -c '/usr/bin/python /home/tux/CHIP/server.py'
+
+
+
 log
 /home/tux/logs/voice-startup.log
 /home/tux/logs/voice-startup.error
