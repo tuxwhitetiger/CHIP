@@ -88,6 +88,7 @@ ExecStart=runuser -l  tux -c '/usr/bin/python /home/tux/CHIP/server.py'
 
 
 log
+/home/tux/CHIP3/CHIP3.0/CHIP/Debug/netcoreapp3.1/*datetime"
 /home/tux/logs/voice-startup.log
 /home/tux/logs/voice-startup.error
 
