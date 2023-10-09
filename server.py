@@ -21,7 +21,7 @@ socketList = []
 socketList.append(s)
 
 def loadGif(fileName):
-    print(fileName)
+    print("filename:"+fileName)
     image = Image.open(fileName)
     output =""
     for frame in range(0,image.n_frames):
@@ -70,9 +70,9 @@ while True:
                         alarm = info.split(':',1)[1]
                         sock.sendall("done".encode())
                     elif "Pull Gif:" in info:
-                        print(info)
+                        print("info:"+info)
                         giftoget = info.split(':',1)[1]
-                        print(giftoget)
+                        print("giftoget:"+giftoget)
                         gifdata = loadGif('faces/'+giftoget)
                         sock.sendall(gifdata.encode())
                     elif "say:" in info:
