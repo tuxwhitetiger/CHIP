@@ -21,8 +21,8 @@ socketList = []
 socketList.append(s)
 
 def loadGif(fileName):
-    image = Image.open(fileName)
     print(fileName)
+    image = Image.open(fileName)
     output =""
     for frame in range(0,image.n_frames):
         image.seek(frame)
