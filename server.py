@@ -73,7 +73,7 @@ while True:
                         print("info:"+info)
                         giftoget = info.split(':',1)[1]
                         print("giftoget:"+giftoget)
-                        gifdata = loadGif('./faces/'+giftoget)
+                        gifdata = loadGif('/home/tux/CHIP/faces/'+giftoget)
                         sock.sendall(gifdata.encode())
                     elif "say:" in info:
                         AlarmMessage = info.split(':',1)[1]
